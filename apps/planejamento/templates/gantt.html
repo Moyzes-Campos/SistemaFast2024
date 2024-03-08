@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block main %}
+{%  include 'menulateral.html' %}
+<main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
+    <!-- Navbar -->
+    {% include 'navsuperior.html' %}
+
+    <div class="container-fluid py-2">
+
+        <div class="row mx-1">
+            <div class="card p-0">
+                <div class="m-2" id="chart_div"></div>
+            </div>
+        </div>
+    </div>
+  </main>
+{% endblock %}

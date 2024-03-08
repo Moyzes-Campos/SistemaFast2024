@@ -1,0 +1,36 @@
+ <script>
+var xValues = ["À Fazer", "Fazendo","Feito"];
+var yValues = [{% for t in tamanhos %}{{ t }},{% endfor %}];
+var barColors = [
+  "#FF2C00",
+  "#00aba9",
+  "#77B309",
+];
+
+new Chart("atividades", {
+  type: "doughnut",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    animation: {
+      duration: 5000,
+    },
+    layout: {
+      padding: {
+        top: 20,
+        bottom: 20
+      }
+    },
+    plugins: {
+      legend: {
+        position: 'bottom',
+      },
+    }
+  },
+});
+</script>

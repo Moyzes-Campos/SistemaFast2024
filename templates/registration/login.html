@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="container-fluid py-2 d-flex align-items-center" style="height: 100vh;">
+    <div class="row mx-auto">
+        <div class="card p-0" style="min-width:300px; min-height: 300px;">
+            <div class="card-header text-center" style="background-color:#ff6633;">
+            <h4 class="text-white py-1">Sistema Utfast</h4>
+        </div>
+        <div class="my-auto">
+            <form method="post" class="text-center">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn" style="background-color:#ff6633; color:#fff;">Login</button>
+            </form>
+        </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

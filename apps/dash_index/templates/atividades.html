@@ -1,0 +1,32 @@
+{% load static %}
+<div class="col-md-4">
+    <div class="card d-flex align-items-center">
+        <div class="card-header text-center w-100" style="background-color: #ff6633; padding:0.5rem;"><h5 class="text-white">Atividades</h5></div>
+        <canvas id="atividades" style="width:100%;max-width:600px"></canvas>
+        <div class="w-100">
+            <ul class="mt-1" style="color: #FF2C00">
+            {% for t in tamanhos %}
+            {% endfor %}
+                    {% for a in atividades %}
+                      {% if a.situacao == 'AF' %}
+                        <li> {{ a.descricao }} </li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+            <ul class="mt-1">
+                    {% for a in atividades %}
+                      {% if a.situacao == 'FA' %}
+                        <li> {{ a.descricao }} </li>
+                      {% endif %}
+                    {% endfor %}
+                  </ul>
+            <ul class="mt-1" style="color: #77B309;">
+                {% for a in atividades %}
+                  {% if a.situacao == 'FE' %}
+                    <li> {{ a.descricao }} </li>
+                  {% endif %}
+                {% endfor %}
+              </ul>
+        </div>
+    </div>
+</div>

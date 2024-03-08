@@ -1,0 +1,23 @@
+{% load static %}
+
+
+<div class="col-4">
+  <div class="card h-100">
+    <div class="card-header d-flex align-item-center justify-content-center" style="background-color: #212121; padding:0.5rem;"><h5 class="text-white">Prazos</h5></div>
+    <hr class="dark horizontal my-0">
+    <div class="card-body overflow-scroll" style="max-height: 55vh;">
+        <div class="list-group">
+            {% for p in prazos %}
+          <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{ p.titulo }}</h5>
+              <small> {{ p.dias_restantes }} dias restantes</small>
+            </div>
+            <p class="mb-1">{{ p.sub_titulo }}</p>
+            <small>{{ p.descricao }}</small>
+          </a>
+          {% endfor %}
+        </div>
+    </div>
+  </div>
+</div>

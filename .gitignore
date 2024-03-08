@@ -1,0 +1,10 @@
+.idea
+*.sqlite3
+venv
+*.pyc
+SistemaFast2024/__pycache__/
+SistemaUTFast.pem
+sistemafast.pem
+media
+migrations
+set_param.py

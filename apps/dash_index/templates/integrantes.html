@@ -1,0 +1,19 @@
+{% load static %}
+<div class="col-6">
+    <div class="card h-100">
+        <div class="card-header text-center" style="background-color: #ff6633; padding:0.5rem;"><h5 class="text-white">Integrantes</h5></div>
+        <hr class="dark horizontal my-0">
+        <div class="card-body">
+            <ul class="navbar-nav">
+                {% for i in integrantes %}
+                <li class="nav-item">
+                  <div class="d-flex align-items-center my-1">
+                    <img src="/media/{{ i.foto }}" height="100px" width="100px" style="border-radius:50px;" class="navbar-brand-img">
+                    <span class="mx-4">{{ i.nome }} - {{ i.cargo }}</span>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+        </div>
+    </div>
+</div>

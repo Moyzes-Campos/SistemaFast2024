@@ -1,0 +1,27 @@
+ <script>
+var xValues = [{% for a in custo_por_area %}'{{ a.area }}',{% endfor %}];
+var yValues = [{% for t in custo_por_area %}{{ t.custo__sum }},{% endfor %}];
+
+new Chart("custoporarea", {
+  type: "polarArea",
+  data: {
+    labels: xValues,
+    datasets: [{
+      data: yValues,
+      backgroundColor: [
+      '#3354FF',
+      '#8EFF33',
+      '#FF6633',
+      '#AA6F5B',
+      '#595F80',
+      '#6A8059',
+    ]
+    }]
+  },
+  options: {
+    animation: {
+      duration: 5000,
+    },
+  },
+});
+    </script>

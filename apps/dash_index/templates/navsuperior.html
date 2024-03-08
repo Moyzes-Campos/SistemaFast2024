@@ -1,0 +1,63 @@
+<nav class="navbar navbar-main navbar-expand-lg px-0 mt-3 mx-2 shadow-none border-radius-xl bg-white" id="navbarBlur" data-scroll="true">
+      <div class="container-fluid py-1 px-3 align-items-center">
+        <nav aria-label="breadcrumb">
+          <h6 class="font-weight-bolder mb-0">  {{ pagina }} - {{ area }}</h6>
+        </nav>
+
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 justify-content-end" id="navbar">
+          <ul class="navbar-nav  justify-content-end">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                        <span class="d-sm-inline d-none"> Bem vindo(a) {{ request.user }}!</span>
+                    </a>
+                </li>
+            {% else %}
+                 <li class="nav-item d-flex mx-4 align-items-center">
+                    <a href="{% url 'admin:index' %}" class="nav-link text-body font-weight-bold px-0">
+                <i class="fa fa-user me-sm-1"></i>
+                <span class="d-sm-inline d-none">Sign In</span>
+              </a>
+            </li>
+            {% endif %}
+            <li class="nav-item d-flex align-items-center">
+              <div class="btn-group justify-content-end" style="margin-bottom: 0;">
+              <button type="button" class="btn btn-primary" style="background-color: #212121; margin-bottom: 0;">{{ area }}</button>
+              <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" style="background-color: #212121; margin-bottom: 0;" data-bs-toggle="dropdown">
+                  <span class="visually-hidden">Toggle Dropdown</span>
+              </button>
+              <div class="dropdown-menu">
+                  {% if request.get_full_path == '/dash/' or request.get_full_path == '/dash/Aerodinamica' or request.get_full_path == '/dash/Suspensao' or request.get_full_path == '/dash/Eletrica' or request.get_full_path == '/dash/Estrutura' or request.get_full_path == '/dash/Freio' or request.get_full_path == '/dash/Powertrain' or request.get_full_path == '/dash/Comercial' or request.get_full_path == '/dash/Financeiro' or request.get_full_path == '/dash/Gestao_Pessoas' or request.get_full_path == '/dash/Marketing' or request.get_full_path == '/dash/Qualidade'%}
+                  <a href="{% url 'index_dash' %}" class="dropdown-item">Geral</a>
+                  <a href="{% url 'indexAE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'indexSP' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'indexEL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'indexES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'indexFR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'indexPW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'indexCM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'indexFN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'indexGS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'indexMK' %}" class="dropdown-item">Marketing</a>
+                  <a href="{% url 'indexQL' %}" class="dropdown-item">Qualidade</a>
+                  {% endif %}
+                  {% if request.get_full_path == '/gantt/' or request.get_full_path == '/gantt/Aerodinamica' or request.get_full_path == '/gantt/Suspensao' or request.get_full_path == '/gantt/Eletrica' or request.get_full_path == '/gantt/Estrutura' or request.get_full_path == '/gantt/Freio' or request.get_full_path == '/gantt/Powertrain' or request.get_full_path == '/gantt/Comercial' or request.get_full_path == '/gantt/Financeiro' or request.get_full_path == '/gantt/Gestao_Pessoas' or request.get_full_path == '/gantt/Marketing' or request.get_full_path == '/gantt/Qualidade'%}<a href="{% url 'dash_planejamento' %}" class="dropdown-item">Geral</a>
+                  <a href="{% url 'gantt_AE' %}" class="dropdown-item">Aerodinâmica</a>
+                  <a href="{% url 'gantt_SP' %}" class="dropdown-item">Dir. e Suspenção</a>
+                  <a href="{% url 'gantt_EL' %}" class="dropdown-item">Elétrica</a>
+                  <a href="{% url 'gantt_ES' %}" class="dropdown-item">Estrutura</a>
+                  <a href="{% url 'gantt_FR' %}" class="dropdown-item">Freio</a>
+                  <a href="{% url 'gantt_PW' %}" class="dropdown-item">Powertrain</a>
+                  <a href="{% url 'gantt_CM' %}" class="dropdown-item">Comercial</a>
+                  <a href="{% url 'gantt_FN' %}" class="dropdown-item">Financeiro</a>
+                  <a href="{% url 'gantt_GS' %}" class="dropdown-item">Gestão de Pessoas</a>
+                  <a href="{% url 'gantt_MK' %}" class="dropdown-item">Marketing</a>
+                  <a href="{% url 'gantt_QL' %}" class="dropdown-item">Qualidade</a>
+                  {% endif %}
+              </div>
+          </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
